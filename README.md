@@ -1,12 +1,12 @@
 # Ensolvers Challenge
 
-This is a Challenge from Ensolvers.
+This is a Challenge from a Site.
 
 ## Live Link:
 
 Here is the SPA online: 
 
-[Notes App Ensolvers](https://note-app-ensolvers.herokuapp.com/)
+[Notes App Challenge](https://guztrillo.github.io/note-app-challenge/)
 
 ## Stack:
 
@@ -33,6 +33,8 @@ First of all, I selected React useContext and useReducer as my state manager. Th
 Later, when I had the basic functionality of the application, I decided to add styles using pure CSS. No media queries using display grid and grid-template-columns.
 
 Then I added more details, like the confirmation dialog for the delete note and persistent data with localStorage. As a front-end developer I wanted that I least the app was somehow functional and with LocalStorage I accomplish this.
+
+I still wanted to finish 'archive notes' section.
 
 
 
