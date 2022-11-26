@@ -1,0 +1,225 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --error: #EB4747 ;
+  --valid: #53BF9D;
+  --black-primary: #1B2430;
+  --purple-sec: #51557E;
+  --purple-high: #816797;
+  --white-back: #F0EBE3;
+  --white-note: #E4DCCF;
+  font-size: 16px;
+}
+
+html, body {
+  background-color: var(--white-back);
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4, p, textarea, small, label {
+  color: var(--black-primary)
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 75rem;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.notes {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 2.5rem;
+  width: 100%;
+}
+
+.note-single {
+  background-color: var(--white-note);
+  border: 2px solid var(--black-primary);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  min-height: 250px;
+  max-height: 400px;
+  /* max-width: 100%; */
+}
+
+.notes-nothing {
+  text-align: center;
+}
+
+.note-single-content {
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
+
+.note-single-content::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.note-single-content::-webkit-scrollbar-track {
+  background: var(--purple-high);
+  border-radius: 20px;
+}
+
+.note-single-content::-webkit-scrollbar-thumb {
+  background-color: var(--black-primary);
+  border-radius: 20px;  
+}
+
+.note-single header {
+  text-align: center;
+}
+
+.note-single-footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-content: center;
+}
+
+.note-single-action {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-content: center;
+}
+
+button {
+  background-color: var(--purple-sec);
+  border: 1px solid var(--black-primary);
+  border-radius: 15px;
+  transition: background-color 0.1s ease-in;
+  color: var(--white-back)
+}
+button:hover{
+  background-color: var(--purple-high);
+  transition: background-color 0.2s ease-out;
+}
+
+.note-single-action button {
+  align-items: center;
+  display: flex;
+  border-radius: 50%;
+  height: 35px;
+  justify-content: center;
+  width: 35px;
+}
+
+.note-single-action .note-icon {
+  font-size: 1.5rem;
+}
+
+
+.notes-header-action button, .node-modal-actions button {
+  padding: 10px;
+}
+.notes-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 40px;
+  width: 100%;
+}
+
+.notes-header-action {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.note-modal h2 {
+  margin: 0;
+}
+
+.note-modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.note-modal-form label {
+  padding: 0.5rem 0;
+}
+
+.note-modal-form input, .note-modal-form textarea {
+  border: 2px solid var(--black-primary);
+  border-radius: 10px;
+  background-color: var(--white-back);
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.note-modal-form textarea {
+  resize: vertical;
+  min-height: 2.5rem;
+  max-height: 12rem;
+}
+
+.note-modal-form input {
+  height: 2.5rem;
+}
+
+.node-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 1rem;
+}
+
+.ReactModalPortal > div{
+  opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  transition: opacity .2s ease-in-out;
+  z-index: 999;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.is-invalid {
+  outline: 3px solid var(--error);
+}
